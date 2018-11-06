@@ -66,7 +66,7 @@ public class UserController {
         return userProfile;
     }
 
-    @GetMapping("/users/{username}/polls")
+    @GetMapping("/users/{username}/books")
     public PagedResponse<BookResponse> getBooksCreatedBy(@PathVariable(value = "username") String username,
                                                          @CurrentUser UserPrincipal currentUser,
                                                          @RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER) int page,
@@ -74,7 +74,7 @@ public class UserController {
         return bookService.getBooksCreatedBy(username, currentUser, page, size);
     }
 
-    @GetMapping("/users/{username}/votes")
+    @GetMapping("/users/{username}/borrows")
     public PagedResponse<BookResponse> getBooksBorrowedBy(@PathVariable(value = "username") String username,
                                                        @CurrentUser UserPrincipal currentUser,
                                                        @RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER) int page,
