@@ -13,7 +13,8 @@ public class Copy {
     private Long id;
 
     @NotBlank
-    private Boolean status;
+    @Size(max = 10)
+    private String status;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "book_id", nullable = false)
@@ -22,7 +23,7 @@ public class Copy {
     public Copy() {
     }
 
-    public Copy(Boolean status) {
+    public Copy(String status) {
         this.status = status;
     }
 
@@ -34,11 +35,11 @@ public class Copy {
         this.id = id;
     }
 
-    public Boolean getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
