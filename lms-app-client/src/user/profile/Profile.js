@@ -103,7 +103,7 @@ class Profile extends Component {
                                     <TabPane tab={`${this.state.user.bookCount} Books`} key="1">
                                         <BookList username={this.props.match.params.username} type="USER_CREATED_BOOKS" />
                                     </TabPane>
-                                    <TabPane tab={`${this.state.user.borrowCount} Borrows`} key="2">
+                                    <TabPane tab={`${this.state.user.borrowCount} Bids`} key="2">
                                         <BookList username={this.props.match.params.username} type="USER_BORROWED_BOOKS" />
                                     </TabPane>
                                 </Tabs>

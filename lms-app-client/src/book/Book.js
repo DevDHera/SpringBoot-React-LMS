@@ -93,20 +93,43 @@ class Book extends Component {
                             </span>
                         </Link>
                     </div>
-                    <div className="book-title">
-                        {this.props.book.title}
+                    <div className="row">
+                        <div className="column-headings">
+                            <div className="headings">
+                                Title:
+                            </div>
+                            <div className="headings">
+                                Author:
+                            </div>
+                            <div className="headings">
+                                Genre:
+                            </div>
+                        </div>
+                        <div className="column-left">
+                            <div className="book-title">
+                                {this.props.book.title}
+                            </div>
+                            <div className="book-author">
+                                {this.props.book.author}
+                            </div>
+                            <div className="book-genre">
+                                {this.props.book.genre}
+                            </div>
+                        </div>
+                        <div className="column-right">
+                            <div className="boook-imageUrl">
+                                <img src={this.props.book.imageUrl} className="book-image"></img>
+                            </div>
+                        </div>
                     </div>
-                    <div className="book-author">
-                        {this.props.book.author}
-                    </div>
-                    <div className="book-genre">
-                        {this.props.book.genre}
-                    </div>
+                    <span className="headings">Brief Intro:</span>
+                    <br></br>
                     <div className="book-content">
                         {this.props.book.content}
                     </div>
                 </div>
                 <div className="book-copies">
+                    <span className="headings-copies">BID for the Copy and Get a chance to Win It</span>
                     <RadioGroup
                         className="book-copy-radio-group"
                         onChange={this.props.handleBorrowChange}
@@ -117,9 +140,9 @@ class Book extends Component {
                 <div className="book-footer">
                     {
                         !(this.props.book.selectedCopy || this.props.book.expired) ?
-                            (<Button className="borrow-button" disabled={!this.props.currentBorrow} onClick={this.props.handleBorrowSubmit}>Borrow</Button>) : null
+                            (<Button className="borrow-button" disabled={!this.props.currentBorrow} onClick={this.props.handleBorrowSubmit}>BID</Button>) : null
                     }
-                    <span className="total-borrows">{this.props.book.totalBorrows} borrows</span>
+                    <span className="total-borrows">{this.props.book.totalBorrows} bids</span>
                     <span className="separator">•</span>
                     <span className="time-left">
                         {

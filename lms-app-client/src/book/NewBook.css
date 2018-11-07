@@ -44,5 +44,6 @@
 }
 
 .book-form-row input, .book-form-row textarea {
+    width: calc(100% - 70px);
     margin-bottom: 4px;
 }

@@ -31,13 +31,54 @@
     color: rgba(0, 0, 0, 0.85);
     margin-bottom: 10px;
 }
-
+        
 .book-author {
     font-weight: 500;
     font-size: 21px;
     color: rgba(0, 0, 0, 0.85);
     margin-bottom: 10px;
 }
+
+.book-image {
+    width: 100%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.column-headings {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.column-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.column-right {
+    width: 30%
+}
+
+.headings {
+    color: #46b2ff;
+    margin: 0 0 0 0; 
+    font-weight: 500;
+    font-size: 21px;    
+    margin-bottom: 10px;   
+}
+
+.headings-copies {
+    color: #52c464;
+    font-size: 15px;
+}
+
 
 @media (max-width: 768px) {
     .book-title, .book-content, .book-genre, .book-author {

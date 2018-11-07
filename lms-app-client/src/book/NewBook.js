@@ -343,35 +343,39 @@ class NewBook extends Component {
 
         return (
             <div className="new-book-container">
-                <h1 className="page-title">Create Book</h1>
+                <h1 className="page-title">Create Book for BID :)</h1>
                 <div className="new-book-content">
                     <Form onSubmit={this.handleSubmit} className="create-book-form">
                         <FormItem validateStatus={this.state.title.validateStatus}
                             help={this.state.title.errorMsg} className="book-form-row">
-                            <TextArea
-                                placeholder="Enter your title"
+                            <Input
+                                placeholder="Enter book title"
                                 style={{ fontSize: '16px' }}
-                                autosize={{ minRows: 3, maxRows: 6 }}
+                                size="large"
+                                // autosize={{ minRows: 1, maxRows: 1 }}
                                 name="title"
                                 value={this.state.title.text}
                                 onChange={this.handleTitleChange} />
                         </FormItem>
                         <FormItem validateStatus={this.state.isbn.validateStatus}
                             help={this.state.isbn.errorMsg} className="book-form-row">
-                            <TextArea
-                                placeholder="Enter your isbn"
+                            <Input
+                                placeholder="Enter book ISBN"
                                 style={{ fontSize: '16px' }}
-                                autosize={{ minRows: 3, maxRows: 6 }}
+                                size="large"
+                                // autosize={{ minRows: 1, maxRows: 1 }}
                                 name="isbn"
                                 value={this.state.isbn.text}
                                 onChange={this.handleIsbnChange} />
+                            <a href={`https://isbnsearch.org/search?s=${this.state.title.text}`} target="_blank"> Find ISBN</a>
                         </FormItem>
                         <FormItem validateStatus={this.state.genre.validateStatus}
                             help={this.state.genre.errorMsg} className="book-form-row">
-                            <TextArea
-                                placeholder="Enter your genre"
+                            <Input
+                                placeholder="Enter book genre"
                                 style={{ fontSize: '16px' }}
-                                autosize={{ minRows: 3, maxRows: 6 }}
+                                size="large"
+                                // autosize={{ minRows: 1, maxRows: 1 }}
                                 name="genre"
                                 value={this.state.genre.text}
                                 onChange={this.handleGenreChange} />
@@ -379,7 +383,7 @@ class NewBook extends Component {
                         <FormItem validateStatus={this.state.content.validateStatus}
                             help={this.state.content.errorMsg} className="book-form-row">
                             <TextArea
-                                placeholder="Enter your content"
+                                placeholder="Enter book content"
                                 style={{ fontSize: '16px' }}
                                 autosize={{ minRows: 3, maxRows: 6 }}
                                 name="content"
@@ -388,23 +392,26 @@ class NewBook extends Component {
                         </FormItem>
                         <FormItem validateStatus={this.state.author.validateStatus}
                             help={this.state.author.errorMsg} className="book-form-row">
-                            <TextArea
-                                placeholder="Enter your author"
+                            <Input
+                                placeholder="Enter book author"
                                 style={{ fontSize: '16px' }}
-                                autosize={{ minRows: 3, maxRows: 6 }}
+                                size="large"
+                                // autosize={{ minRows: 1, maxRows: 1 }}
                                 name="author"
                                 value={this.state.author.text}
                                 onChange={this.handleAuthorChange} />
                         </FormItem>
                         <FormItem validateStatus={this.state.imageUrl.validateStatus}
                             help={this.state.imageUrl.errorMsg} className="book-form-row">
-                            <TextArea
-                                placeholder="Enter your Image URL"
+                            <Input
+                                placeholder="Enter book Image URL"
                                 style={{ fontSize: '16px' }}
-                                autosize={{ minRows: 3, maxRows: 6 }}
+                                size="large"
+                                // autosize={{ minRows: 1, maxRows: 1 }}
                                 name="imageUrl"
                                 value={this.state.imageUrl.text}
                                 onChange={this.handleImageUrlChange} />
+                            <a href={`https://www.barnesandnoble.com/s/${this.state.title.text}`} target="_blank"> Find IMG</a>
                         </FormItem>
                         {copyViews}
                         <FormItem className="book-form-row">
@@ -465,6 +472,7 @@ function BookCopy(props) {
     return (
         <FormItem validateStatus={props.copy.validateStatus}
             help={props.copy.errorMsg} className="book-form-row">
+
             <Input
                 placeholder={'Copy ' + (props.copyNumber + 1)}
                 size="large"
